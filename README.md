@@ -12,67 +12,6 @@ A modern, native Minecraft launcher built with Qt C++ for optimal performance an
 📴 **Offline Mode** - Play Minecraft without authentication (default enabled)  
 💾 **Local Storage** - All data stored locally in JSON files (no database required)
 
-## Prerequisites
-
-### Required Software
-
-1. **Qt 6.x** - Download from https://www.qt.io/download
-2. **CMake 3.16+** - Download from https://cmake.org/download/
-3. **C++ Compiler**:
-   - Windows: MSVC 2019+ or MinGW
-4. **Java Runtime** - For running Minecraft (JRE 17 recommended)
-
-### Optional Tools
-
-- **NSIS** - For creating Windows installer (https://nsis.sourceforge.io/)
-- **Qt Installer Framework** - Alternative installer option
-
-## Building the Project
-
-### Windows - Visual Studio
-
-```powershell
-# 1. Clone or extract the project
-cd MinecraftLauncher-Qt
-
-# 2. Create build directory
-mkdir build
-cd build
-
-# 3. Configure with CMake
-cmake .. -G "Visual Studio 17 2022" -DCMAKE_PREFIX_PATH="C:/Qt/6.x.x/msvc2019_64"
-
-# 4. Build
-cmake --build . --config Release
-
-# 5. Run
-cd Release
-.\MinecraftLauncher.exe
-```
-
-### Windows - MinGW
-
-```powershell
-# 1. Create build directory
-mkdir build
-cd build
-
-# 2. Configure
-cmake .. -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH="C:/Qt/6.x.x/mingw_64"
-
-# 3. Build
-cmake --build . --config Release
-
-# 4. Run
-.\MinecraftLauncher.exe
-```
-
-### Using Qt Creator (Recommended for Development)
-
-1. Open `CMakeLists.txt` in Qt Creator
-2. Configure the project with your Qt kit
-3. Click **Build > Build Project**
-4. Click **Run** to launch
 
 ## Project Structure
 
@@ -117,40 +56,6 @@ MinecraftLauncher-Qt/
 └── README.md                     # This file
 ```
 
-## Creating a Windows Installer
-
-### Using NSIS
-
-1. **Build the Release version** (see above)
-
-2. **Install NSIS** from https://nsis.sourceforge.io/
-
-3. **Prepare distribution files**:
-```powershell
-mkdir installer-files
-copy build\Release\MinecraftLauncher.exe installer-files\
-# Copy Qt DLLs (use windeployqt):
-windeployqt installer-files\MinecraftLauncher.exe
-```
-
-4. **Compile installer**:
-```powershell
-cd installer
-makensis setup.nsi
-```
-
-5. **Output**: `MinecraftLauncher-Setup.exe`
-
-### Using Qt Installer Framework
-
-```powershell
-# 1. Create installer structure
-mkdir installer-qt
-cd installer-qt
-
-# 2. Use Qt IFW tools
-binarycreator --offline-only -c config\config.xml -p packages MinecraftLauncher-Installer.exe
-```
 
 ## Configuration
 
@@ -199,8 +104,8 @@ instances/my-instance/
 
 ### Official Releases
 Download the latest version from GitHub:
-- **Releases:** https://github.com/YOUR_USERNAME/minecraft-launcher-qt/releases
-- **Latest:** https://github.com/YOUR_USERNAME/minecraft-launcher-qt/releases/latest
+- **Releases:** https://github.com/ArnavPatil24/MC-Launcher/releases
+- **Latest:** https://github.com/ArnavPatil24/MC-Launcher/releases/latest
 
 1. Download `MinecraftLauncher_Setup_1.0.0.exe`
 2. Run the installer
@@ -318,8 +223,7 @@ This project is for educational purposes. Minecraft is a trademark of Mojang Stu
 
 For issues and questions:
 1. Check the Troubleshooting section
-2. Review Qt documentation: https://doc.qt.io/
-3. Check Minecraft launcher documentation
+2. Check Minecraft launcher documentation
 
 ---
 
