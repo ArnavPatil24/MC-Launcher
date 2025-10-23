@@ -1,4 +1,4 @@
-# Minecraft Launcher - Native Qt C++ Edition
+# MC Launcher 
 
 A modern, native Minecraft launcher built with Qt C++ for optimal performance and native Windows integration.
 
